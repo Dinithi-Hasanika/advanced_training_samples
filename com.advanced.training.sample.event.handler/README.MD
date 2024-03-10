@@ -3,7 +3,7 @@ But you can customize the event handler to do whatever you want (Ex: Send an ema
 
 CONFIGURATION : 
 [[event_handler]]
-name="customUserRegistration"
+name="customEventHandler"
 subscriptions=["PRE_ADD_USER","POST_ADD_USER"]
 
 The following guide shows you how to write a custom event handler.
