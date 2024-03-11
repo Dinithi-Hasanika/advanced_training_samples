@@ -28,7 +28,7 @@ public class CustomPostAuthenticationHandlerService {
                     new CustomPostAuthenticationHandler();
             context.getBundleContext().registerService(PostAuthenticationHandler.class.getName(),
                     customPostAuthenticationHandler, null);
-            log.error("custom post authentication handler is activated successfully.");
+            log.info("custom post authentication handler is activated successfully.");
         } catch (Throwable e) {
             log.error("Error while activating custom post authentication handler.", e);
         }
