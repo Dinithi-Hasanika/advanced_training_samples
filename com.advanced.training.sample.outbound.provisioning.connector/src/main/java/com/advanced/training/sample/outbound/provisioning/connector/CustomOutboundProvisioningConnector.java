@@ -29,11 +29,6 @@ public class CustomOutboundProvisioningConnector extends AbstractOutboundProvisi
         if (provisioningProperties != null && provisioningProperties.length > 0) {
             for (Property property : provisioningProperties) {
                 configs.put(property.getName(), property.getValue());
-                if (IdentityProvisioningConstants.JIT_PROVISIONING_ENABLED.equals(property.getName())) {
-                    if (CustomOutboundProvisioningConnectorConstants.PROPERTY_VALUE_TRUE.equals(property.getValue())) {
-                        jitProvisioningEnabled = true;
-                    }
-                }
             }
         }
         configHolder = new CustomOutboundProvisioningConnectorConfig(configs);
@@ -46,11 +41,6 @@ public class CustomOutboundProvisioningConnector extends AbstractOutboundProvisi
         String provisionedId = null;
 
         if (provisioningEntity != null) {
-
-            if (provisioningEntity.isJitProvisioning() && !isJitProvisioningEnabled()) {
-                LOG.debug("JIT provisioning disabled for Office365 connector");
-                return null;
-            }
 
             if (ProvisioningEntityType.USER == provisioningEntity.getEntityType()) {
                 if (ProvisioningOperation.DELETE == provisioningEntity.getOperation()) {
