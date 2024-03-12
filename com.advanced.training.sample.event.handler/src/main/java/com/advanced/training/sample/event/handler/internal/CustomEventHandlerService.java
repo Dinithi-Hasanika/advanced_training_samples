@@ -30,7 +30,7 @@ public class CustomEventHandlerService {
             BundleContext bundleContext = context.getBundleContext();
             bundleContext.registerService(AbstractEventHandler.class.getName(), new CustomEventHandler(),
                     null);
-            log.info("Custom event handler handler component activated successfully.");
+            log.info("Custom event handler, handler component activated successfully.");
         } catch (Exception e) {
             log.error("Error while activating custom event handler handler handler component.", e);
         }
