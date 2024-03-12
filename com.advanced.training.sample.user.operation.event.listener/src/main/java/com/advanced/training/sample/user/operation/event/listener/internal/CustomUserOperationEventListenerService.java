@@ -28,7 +28,7 @@ public class CustomUserOperationEventListenerService {
                     context.getBundleContext().registerService(UserOperationEventListener.class.getName(),
                             listener, null);
 
-            log.info("custom user operation event listener is de-activated");
+            log.info("custom user operation event listener is activated");
 
         } catch (Throwable e) {
             log.error("Error while activating custom user operation event listener.", e);
